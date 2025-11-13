@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline - HealthPulse</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: #1f2937;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 24px;
+      background: linear-gradient(135deg, #2DC6A8 0%, #3B82F6 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 32px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #111827;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      color: #6b7280;
+    }
+
+    .tips {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 24px;
+    }
+
+    .tips h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #111827;
+    }
+
+    .tips ul {
+      text-align: left;
+      list-style: none;
+      padding: 0;
+    }
+
+    .tips li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f3f4f6;
+      display: flex;
+      align-items: center;
+    }
+
+    .tips li:last-child {
+      border-bottom: none;
+    }
+
+    .tips li:before {
+      content: "✓";
+      color: #2DC6A8;
+      font-weight: bold;
+      margin-right: 12px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #2DC6A8 0%, #3B82F6 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform 0.2s;
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">🏥</div>
+    <h1>You're Offline</h1>
+    <p>HealthPulse needs an internet connection to show the latest health data in your area.</p>
+
+    <div class="tips">
+      <h2>While You're Offline</h2>
+      <ul>
+        <li>Rest and stay hydrated</li>
+        <li>Monitor your symptoms regularly</li>
+        <li>Practice good hygiene</li>
+        <li>Contact a healthcare provider if symptoms worsen</li>
+      </ul>
+    </div>
+
+    <button class="btn" onclick="window.location.reload()">
+      Try Again
+    </button>
+  </div>
+</body>
+</html>
