@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 249, 250, 251;
-  --background-end-rgb: 249, 250, 251;
 }
 
+/* Reset */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -20,11 +20,11 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: var(--background-start-rgb);
 }
 
 body {
   color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
   font-family: 'Inter', sans-serif;
 }
 
@@ -33,7 +33,7 @@ a {
   text-decoration: none;
 }
 
-/* Custom scrollbar for mobile */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
 }
@@ -51,7 +51,7 @@ a {
   background: #a8a8a8;
 }
 
-/* Card hover effects */
+/* Hover card */
 .card-hover {
   transition: transform 0.2s ease-in-out;
 }
@@ -76,14 +76,23 @@ a {
   }
 }
 
-/* Mobile-safe button touch targets */
+/* Touch target */
 button, .btn {
   min-height: 44px;
   min-width: 44px;
 }
 
-/* Map container fix */
+/* Map container */
 .leaflet-container {
   height: 100%;
   width: 100%;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

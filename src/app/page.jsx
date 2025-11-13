@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 import { Thermometer, Heart, Activity, Wind } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { BottomNav } from '@/components/navigation/BottomNav'
+import TrendChart from "@/components/TrendChart";
+
 
 // Mock data for demo
 const mockData = {
@@ -87,7 +89,8 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="max-w-md mx-auto px-4 py-6 space-y-6">
+     <main className="w-full max-w-md mx-auto px-4 py-6 space-y-6">
+
         {/* Health Overview Cards */}
         <motion.div
           variants={containerVariants}
@@ -99,7 +102,7 @@ export default function Home() {
             Health Overview
           </h2>
 
-          <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
+          <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2">
             {/* Fever Reports Card */}
             <motion.div variants={cardVariants} className="flex-shrink-0">
               <Card className="w-40 bg-gradient-to-br from-primary to-secondary border-none">
@@ -136,7 +139,8 @@ export default function Home() {
                     <Heart size={24} />
                     <Activity size={16} className="animate-pulse" />
                   </div>
-                  <div className="text-2xl font-bold">{data.recoveryRate}%</div>
+                  <div className="text-2xl font-bold">{Math.round(data.recoveryRate)}%</div>
+
                   <div className="text-sm opacity-90">Recovery Rate</div>
                 </CardContent>
               </Card>
@@ -156,13 +160,19 @@ export default function Home() {
           </h2>
           <Card className="bg-gradient-to-br from-blue-50 to-teal-50 border border-gray-100">
             <CardContent className="p-6">
-              <div className="h-48 bg-gray-50 rounded-lg flex items-center justify-center">
+              {/* <div className="h-48 bg-gray-50 rounded-lg flex items-center justify-center">
                 <div className="text-center text-gray-500">
                   <Activity size={32} className="mx-auto mb-2 opacity-50" />
                   <p className="text-sm">Trend Chart Loading...</p>
                   <p className="text-xs mt-1">Fever and cough trends over 7 days</p>
                 </div>
-              </div>
+              </div> */}
+              <Card className="bg-gradient-to-br from-blue-50 to-teal-50 border border-gray-100">
+  <CardContent className="p-4">
+    <TrendChart weeklyTrend={data.weeklyTrend} />
+  </CardContent>
+</Card>
+
             </CardContent>
           </Card>
         </motion.div>

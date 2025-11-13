@@ -1,8 +1,10 @@
-module.exports = {
+export default {
   content: [
     "./src/app/**/*.{js,jsx}",
     "./src/pages/**/*.{js,jsx}",
     "./src/components/**/*.{js,jsx}",
+    "./src/lib/**/*.{js,jsx}",
+    "./public/**/*.html"
   ],
   theme: {
     extend: {
@@ -16,5 +18,4 @@ module.exports = {
       },
     },
   },
-  plugins: [],
-}
+};

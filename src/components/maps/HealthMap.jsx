@@ -34,7 +34,9 @@ export function HealthMap({ locations, selectedLocation, onLocationSelect }) {
     if (!mapRef.current || mapInstanceRef.current) return
 
     // Initialize map
-    const map = L.map(mapRef.current).setView([40.7128, -74.0060], 12)
+   const map = L.map(mapRef.current).setView([12.9716, 77.5946], 12)
+
+
 
     // Add tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

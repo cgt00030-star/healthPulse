@@ -16,13 +16,16 @@ const MapComponent = dynamic(
   }
 )
 
+// Bengaluru ward coordinates
 const mockLocations = [
-  { id: '1', ward: 'Ward 12', lat: 40.7128, lng: -74.0060, feverCount: 14, coughCount: 9, severity: 'moderate' },
-  { id: '2', ward: 'Ward 13', lat: 40.7260, lng: -73.9897, feverCount: 8, coughCount: 6, severity: 'low' },
-  { id: '3', ward: 'Ward 14', lat: 40.7489, lng: -73.9680, feverCount: 22, coughCount: 15, severity: 'high' },
-  { id: '4', ward: 'Ward 15', lat: 40.7310, lng: -73.9965, feverCount: 11, coughCount: 8, severity: 'low' },
-  { id: '5', ward: 'Ward 11', lat: 40.7282, lng: -73.9942, feverCount: 6, coughCount: 4, severity: 'low' },
-  { id: '6', ward: 'Ward 16', lat: 40.7580, lng: -73.9855, feverCount: 18, coughCount: 12, severity: 'moderate' },
+  { id: '1', ward: 'Jayanagar', lat: 12.9250, lng: 77.5937, feverCount: 14, coughCount: 9, severity: 'moderate' },
+  { id: '2', ward: 'Koramangala', lat: 12.9352, lng: 77.6245, feverCount: 8, coughCount: 6, severity: 'low' },
+  { id: '3', ward: 'Indiranagar', lat: 12.9716, lng: 77.6412, feverCount: 22, coughCount: 15, severity: 'high' },
+  { id: '4', ward: 'Whitefield', lat: 12.9698, lng: 77.7499, feverCount: 11, coughCount: 8, severity: 'low' },
+  { id: '5', ward: 'Malleshwaram', lat: 13.0067, lng: 77.5703, feverCount: 6, coughCount: 4, severity: 'low' },
+  { id: '6', ward: 'BTM Layout', lat: 12.9165, lng: 77.6101, feverCount: 18, coughCount: 12, severity: 'moderate' },
+  { id: '7', ward: 'Electronic City', lat: 12.8456, lng: 77.6603, feverCount: 10, coughCount: 7, severity: 'low' },
+  { id: '8', ward: 'Yelahanka', lat: 13.1007, lng: 77.5963, feverCount: 15, coughCount: 11, severity: 'moderate' },
 ]
 
 function MapLoadingSkeleton() {
@@ -88,15 +91,15 @@ function LegendCard() {
           <div className="space-y-1">
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-              <span className="text-xs text-gray-600">Low (0-5 reports)</span>
+              <span className="text-xs text-gray-600">Low (0-10 reports)</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-              <span className="text-xs text-gray-600">Moderate (6-15 reports)</span>
+              <span className="text-xs text-gray-600">Moderate (11-20 reports)</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-              <span className="text-xs text-gray-600">High (15+ reports)</span>
+              <span className="text-xs text-gray-600">High (20+ reports)</span>
             </div>
           </div>
         </CardContent>
@@ -128,7 +131,7 @@ export default function MapPage() {
       <header className="absolute top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-20 px-4 py-4">
         <div className="max-w-md mx-auto">
           <h1 className="text-xl font-bold font-poppins text-gray-900">
-            Health Map
+            Bengaluru Health Map
           </h1>
           <p className="text-sm text-gray-600">
             Real-time local health trends
